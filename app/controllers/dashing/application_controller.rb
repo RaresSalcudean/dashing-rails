@@ -3,8 +3,6 @@ module Dashing
 
     before_action :authentication_with_devise
 
-    private
-
     def authentication_with_devise
       Dashing.config.devise_allowed_models.each do |model|
         send("authenticate_#{model.to_s}!")
